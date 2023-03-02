@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PersonalCard</string>
+    <string name="name">John Doe</string>
+    <string name="title">Master of the universe</string>
+</resources>

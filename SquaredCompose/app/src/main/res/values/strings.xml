@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SquaredCompose</string>
+    <string name="TextC">Text composable</string>
+    <string name="ImageC">Image composable</string>
+    <string name="RowC">Row composable</string>
+    <string name="ColumnC">Column composable</string>
+    <string name="TextT">Displays text and follows Material Design guidelines.</string>
+    <string name="ImageT">Creates a composable that lays out and draws a given Painter class object.</string>
+    <string name="RowT">A layout composable that places its children in a horizontal sequence.</string>
+    <string name="ColumnT">A layout composable that places its children in a vertical sequence.</string>
+</resources>
