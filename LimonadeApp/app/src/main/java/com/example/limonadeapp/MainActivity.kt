@@ -4,12 +4,14 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -33,6 +35,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun LemonadeStartPreview() {
     var result by remember { mutableStateOf(1) }
+    var drinks by remember { mutableStateOf(0) }
 
     val imageResource = when(result){
         1 -> R.drawable.lemon_tree
@@ -56,8 +59,23 @@ fun LemonadeStartPreview() {
     {
         Text(text = stringResource(txtResource), fontSize = 18.sp)
         Button(onClick = {
-            println("Button Lemon tree pressed")
-        }, modifier = Modifier.padding(top = 16.dp)){
+            if(result == 2){
+                if(drinks<=0){
+                    drinks = (2..4).random()
+                    println(drinks)
+                }else{
+                    drinks--;
+                    if(drinks==0){
+                        result++
+                    }
+                }
+            }else if(result<4){
+                result++
+            }else{
+                result=1
+            }
+
+        }, modifier = Modifier.padding(top = 16.dp).background(Color.Transparent)){
             Image(painter = painterResource (imageResource), contentDescription = "Lemon img")
         }
     }
